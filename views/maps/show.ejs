@@ -1,9 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+    <%- include("../partials/head.ejs") %>
 </head>
 <body>
-    show
+<%- include("../partials/styles.ejs") %>
+
+<div class="full-page">
+    <header>
+        <%- include("../partials/header.ejs") %>
+    </header>
+    <div class="shell">
+        <section>
+            <p><img src=<%= map.img %>></p>
+            <p><%= map.description %></p>
+        </section>
+        <section>
+            <form action="/maps/<%= map._id %>?_method=DELETE" method="POST">
+                <input type="submit" value="Delete Map" />
+                <button><a href="/maps/<%= map._id %>/edit">Edit Map</a></button>
+            </form>
+        </section>
+    </div>
+</div>
+
 </body>
 </html>

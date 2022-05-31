@@ -24,7 +24,15 @@ router.get("/", (req, res) => {
 
 //e
 
-//s
+//show
+router.get("/:id", (req, res) => {
+    Map.findById(req.params.id, (err, foundMap) => {
+        res.render("maps/show.ejs", {
+            map: foundMap,
+            tabTitle: `${foundMap.location}`,
+        });
+    });
+});
 
 //export
 module.exports = router;
