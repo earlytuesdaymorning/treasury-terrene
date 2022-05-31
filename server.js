@@ -37,7 +37,9 @@ app.use("/special-items", specialItemsController);
 //routes
 //home
 app.get("/", (req, res) => {
-    res.render("home.ejs");
+    res.render("home.ejs", {
+        tabTitle: "Home",
+    });
 });
 
 //app is listening
