@@ -3,19 +3,63 @@ const router = express.Router();
 const NPC = require("../models/npc");
 
 //routes
-//i
+//index
+router.get("/", (req, res) => {
+    NPC.find({}, (err, foundNPCs) => {
+        res.render("npcs/index.ejs", {
+            npcs: foundNPCs,
+            tabTitle: "NPCs",
+        });
+    });
+});
 
-//n
+//new
+router.get("/new", (req, res) => {
+    res.render("npcs/new.ejs", {
+        tabTitle: "New NPCs",
+    });
+});
 
-//d
+//delete
+router.delete("/:id", (req, res) => {
+    NPC.findByIdAndRemove(req.params.id, () => {
+        res.redirect("/npcs");
+    });
+});
 
-//u
+//update
+router.put("/:id", (req, res) => {
+    NPC.findByIdAndUpdate(req.params.id, req.body, () => {
+        res.redirect("/npcs");
+    });
+});
 
-//c
+//create
+router.post("/", (req, res) => {
+    NPC.create(req.body, (err, createdNPC) => {
+        res.redirect("/npcs");
+    });
+});
 
-//e
+//edit
+router.get("/:id/edit", (req, res) => {
+    NPC.findById(req.params.id, (err, foundNPC) => {
+        res.render("maps/edit.ejs", {
+            npc: foundNPC,
+            tabTitle: `Edit ${foundNPC.name}`,
+        });
+    });
+});
 
-//s
+//show
+router.get("/:id", (req, res) => {
+    NPC.findById(req.params.id, (err, foundNPC) => {
+        res.render("maps/show.ejs", {
+            npc: foundNPC,
+            tabTitle: `${foundNPC.name}`,
+        });
+    });
+});
 
 //export
 module.exports = router;

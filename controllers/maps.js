@@ -47,7 +47,7 @@ router.get("/:id/edit", (req, res) => {
     Map.findById(req.params.id, (err, foundMap) => {
         res.render("maps/edit.ejs", {
             map: foundMap,
-            tabTitle: "Edit Map",
+            tabTitle: `Edit Map of ${foundMap.location}`,
         });
     });
 });
@@ -57,7 +57,7 @@ router.get("/:id", (req, res) => {
     Map.findById(req.params.id, (err, foundMap) => {
         res.render("maps/show.ejs", {
             map: foundMap,
-            tabTitle: `${foundMap.location}`,
+            tabTitle: `Map of ${foundMap.location}`,
         });
     });
 });

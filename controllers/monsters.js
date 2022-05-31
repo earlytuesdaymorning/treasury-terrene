@@ -3,19 +3,63 @@ const router = express.Router();
 const Monster = require("../models/monster");
 
 //routes
-//i
+//index
+router.get("/", (req, res) => {
+    Monster.find({}, (err, foundMonsters) => {
+        res.render("monsters/index.ejs", {
+            monsters: foundMonsters,
+            tabTitle: "Monsters",
+        });
+    });
+});
 
-//n
+//new
+router.get("/new", (req, res) => {
+    res.render("monsters/new.ejs", {
+        tabTitle: "New Monster",
+    });
+});
 
-//d
+//delete
+router.delete("/:id", (req, res) => {
+    Monster.findByIdAndRemove(req.params.id, () => {
+        res.redirect("/monsters");
+    });
+});
 
-//u
+//update
+router.put("/:id", (req, res) => {
+    Monster.findByIdAndUpdate(req.params.id, req.body, () => {
+        res.redirect("/monsters");
+    });
+});
 
-//c
+//create
+router.post("/", (req, res) => {
+    Monster.create(req.body, (err, createdMap) => {
+        res.redirect("/monsters");
+    });
+});
 
-//e
+//edit
+router.get("/:id/edit", (req, res) => {
+    Monster.findById(req.params.id, (err, foundMonster) => {
+        res.render("maps/edit.ejs", {
+            monster: foundMonster,
+            tabTitle: `Edit ${foundMonster.name}`,
+        });
+    });
+});
 
-//s
+//show
+router.get("/:id", (req, res) => {
+    Monster.findById(req.params.id, (err, foundMonster) => {
+        res.render("monsters/show.ejs", {
+            monster: foundMonster,
+            tabTitle: `${foundMonster.name}`,
+        });
+    });
+});
 
 //export
 module.exports = router;

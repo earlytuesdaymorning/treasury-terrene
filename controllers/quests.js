@@ -3,19 +3,63 @@ const router = express.Router();
 const Quest = require("../models/quest");
 
 //routes
-//i
+//index
+router.get("/", (req, res) => {
+    Quest.find({}, (err, foundQuests) => {
+        res.render("quests/index.ejs", {
+            quests: foundQuests,
+            tabTitle: "Quests",
+        });
+    });
+});
 
-//n
+//new
+router.get("/new", (req, res) => {
+    res.render("quests/new.ejs", {
+        tabTitle: "New Quest",
+    });
+});
 
-//d
+//delete
+router.delete("/:id", (req, res) => {
+    Quest.findByIdAndRemove(req.params.id, () => {
+        res.redirect("/quests");
+    });
+});
 
-//u
+//update
+router.put("/:id", (req, res) => {
+    Quest.findByIdAndUpdate(req.params.id, req.body, () => {
+        res.redirect("/quests");
+    });
+});
 
-//c
+//create
+router.post("/", (req, res) => {
+    Map.create(req.body, (err, createdQuest) => {
+        res.redirect("/quests");
+    });
+});
 
-//e
+//edit
+router.get("/:id/edit", (req, res) => {
+    Map.findById(req.params.id, (err, foundQuest) => {
+        res.render("quests/edit.ejs", {
+            quest: foundQuest,
+            tabTitle: `Edit ${foundQuest.name}`,
+        });
+    });
+});
 
-//s
+//show
+router.get("/:id", (req, res) => {
+    Quest.findById(req.params.id, (err, foundQuest) => {
+        res.render("quests/show.ejs", {
+            quest: foundQuest,
+            tabTitle: `${foundQuest.name}`,
+        });
+    });
+});
 
 //export
 module.exports = router;
