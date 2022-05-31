@@ -28,7 +28,12 @@ router.delete("/:id", (req, res) => {
     });
 });
 
-//u
+//update
+router.put("/:id", (req, res) => {
+    Map.findByIdAndUpdate(req.params.id, req.body, () => {
+        res.redirect("/maps");
+    });
+});
 
 //create
 router.post("/", (req, res) => {
@@ -37,7 +42,15 @@ router.post("/", (req, res) => {
     });
 });
 
-//e
+//edit
+router.get("/:id/edit", (req, res) => {
+    Map.findById(req.params.id, (err, foundMap) => {
+        res.render("maps/edit.ejs", {
+            map: foundMap,
+            tabTitle: "Edit Map",
+        });
+    });
+});
 
 //show
 router.get("/:id", (req, res) => {
