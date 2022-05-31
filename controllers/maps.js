@@ -4,7 +4,15 @@ const router = express.Router();
 const Map = require("../models/map");
 
 //routes
-//i
+//index
+router.get("/", (req, res) => {
+    Map.find({}, (err, foundMaps) => {
+        res.render("maps/index.ejs", {
+            maps: foundMaps,
+            tabTitle: "Maps",
+        });
+    });
+});
 
 //n
 

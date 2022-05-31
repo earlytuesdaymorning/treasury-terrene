@@ -1,9 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+    <%- include("../partials/head.ejs") %>
 </head>
 <body>
-    index
+
+<div class="full-page">
+    <header>
+        <%- include("../partials/header.ejs") %>
+    </header>
+    <div class="shell">
+        <div class="all-maps">
+            <% maps.forEach(map=> { %>
+            <li><a href="/maps/<%=map._id; %>"> <%=map.location; %></a></li>
+            <% }) %>
+        </div>
+    </div>
+</div>
 </body>
 </html>
