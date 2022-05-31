@@ -21,7 +21,12 @@ router.get("/new", (req, res) => {
     });
 });
 
-//d
+//delete
+router.delete("/:id", (req, res) => {
+    Map.findByIdAndRemove(req.params.id, () => {
+        res.redirect("/maps");
+    });
+});
 
 //u
 
