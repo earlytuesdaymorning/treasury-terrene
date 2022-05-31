@@ -11,7 +11,7 @@
         <%- include("../partials/header.ejs") %>
     </header>
     <div class="shell">
-        <div class="all-maps">
+        <div class="all-things">
             <% maps.forEach(map=> { %>
             <li><a href="/maps/<%=map._id; %>"> <%=map.location; %></a></li>
             <% }) %>

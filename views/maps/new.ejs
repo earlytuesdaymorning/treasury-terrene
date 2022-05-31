@@ -1,9 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
 
+<head>
+    <%- include("../partials/head.ejs") %>
 </head>
+
 <body>
-    new
+    <%- include("../partials/styles.ejs") %>
+
+        <div class="full-page">
+            <header>
+                <%- include("../partials/header.ejs") %>
+            </header>
+            <div class="shell">
+                <div class="new-form">
+                    <form action="/maps" method="POST">
+                        <label>Image URL: </label><input type="text" name="img" />
+                        <label>Location Name: </label><input type="text" name="location" />
+                        <label>Description: </label><textarea name="description" cols="30" rows="10"></textarea>
+                        <input type="submit" value="Add Map" />
+                    </form>
+                </div>
+            </div>
+        </div>
+
 </body>
+
 </html>

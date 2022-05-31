@@ -14,13 +14,23 @@ router.get("/", (req, res) => {
     });
 });
 
-//n
+//new
+router.get("/new", (req, res) => {
+    res.render("maps/new.ejs", {
+        tabTitle: "New Map",
+    });
+});
 
 //d
 
 //u
 
-//c
+//create
+router.post("/", (req, res) => {
+    Map.create(req.body, (err, createdMap) => {
+        res.redirect("/maps");
+    });
+});
 
 //e
 
