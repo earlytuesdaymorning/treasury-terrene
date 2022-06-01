@@ -39,6 +39,8 @@ app.use("/special-items", specialItemsController);
 app.get("/", (req, res) => {
     res.render("home.ejs", {
         tabTitle: "Home",
+        typeURL: " ",
+        type: " ",
     });
 });
 

@@ -10,6 +10,8 @@ router.get("/", (req, res) => {
         res.render("maps/index.ejs", {
             maps: foundMaps,
             tabTitle: "Maps",
+            typeURL: "maps",
+            type: "New Map",
         });
     });
 });
@@ -18,6 +20,8 @@ router.get("/", (req, res) => {
 router.get("/new", (req, res) => {
     res.render("maps/new.ejs", {
         tabTitle: "New Map",
+        typeURL: "maps",
+        type: "New Map",
     });
 });
 
@@ -31,7 +35,7 @@ router.delete("/:id", (req, res) => {
 //update
 router.put("/:id", (req, res) => {
     Map.findByIdAndUpdate(req.params.id, req.body, () => {
-        res.redirect("/maps");
+        res.redirect("/maps/" + req.params.id);
     });
 });
 
@@ -48,6 +52,8 @@ router.get("/:id/edit", (req, res) => {
         res.render("maps/edit.ejs", {
             map: foundMap,
             tabTitle: `Edit Map of ${foundMap.location}`,
+            typeURL: "maps",
+            type: "New Map",
         });
     });
 });
@@ -58,6 +64,8 @@ router.get("/:id", (req, res) => {
         res.render("maps/show.ejs", {
             map: foundMap,
             tabTitle: `Map of ${foundMap.location}`,
+            typeURL: "maps",
+            type: "New Map",
         });
     });
 });

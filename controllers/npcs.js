@@ -9,6 +9,8 @@ router.get("/", (req, res) => {
         res.render("npcs/index.ejs", {
             npcs: foundNPCs,
             tabTitle: "NPCs",
+            typeURL: "npcs",
+            type: "New NPC",
         });
     });
 });
@@ -17,6 +19,8 @@ router.get("/", (req, res) => {
 router.get("/new", (req, res) => {
     res.render("npcs/new.ejs", {
         tabTitle: "New NPCs",
+        typeURL: "npcs",
+        type: "New NPC",
     });
 });
 
@@ -30,7 +34,7 @@ router.delete("/:id", (req, res) => {
 //update
 router.put("/:id", (req, res) => {
     NPC.findByIdAndUpdate(req.params.id, req.body, () => {
-        res.redirect("/npcs");
+        res.redirect("/npcs/" + req.params.id);
     });
 });
 
@@ -44,9 +48,11 @@ router.post("/", (req, res) => {
 //edit
 router.get("/:id/edit", (req, res) => {
     NPC.findById(req.params.id, (err, foundNPC) => {
-        res.render("maps/edit.ejs", {
+        res.render("npcs/edit.ejs", {
             npc: foundNPC,
             tabTitle: `Edit ${foundNPC.name}`,
+            typeURL: "npcs",
+            type: "New NPC",
         });
     });
 });
@@ -54,9 +60,11 @@ router.get("/:id/edit", (req, res) => {
 //show
 router.get("/:id", (req, res) => {
     NPC.findById(req.params.id, (err, foundNPC) => {
-        res.render("maps/show.ejs", {
+        res.render("npcs/show.ejs", {
             npc: foundNPC,
             tabTitle: `${foundNPC.name}`,
+            typeURL: "npcs",
+            type: "New NPC",
         });
     });
 });

@@ -8,21 +8,19 @@ const monsterSchema = new Schema({
     armcls: String,
     hitpts: String,
     speed: Number,
-    stats:[{
-        str: String,
-        dex: String,
-        con: String,
-        int: String,
-        wis: String,
-        cha: String,
-    }],
+    str: String,
+    dex: String,
+    con: String,
+    int: String,
+    wis: String,
+    cha: String,
     skills: String,
-    dmgresist: String,
-    dmgweak: String,
+    dmgrst: String,
+    dmgvul: String,
     lang: String,
     actions: String,
     description: String,
-
+    img: String,
 });
 
 const Monster = mongoose.model("Monster", monsterSchema);

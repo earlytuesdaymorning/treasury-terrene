@@ -9,6 +9,8 @@ router.get("/", (req, res) => {
         res.render("quests/index.ejs", {
             quests: foundQuests,
             tabTitle: "Quests",
+            typeURL: "quests",
+            type: "New Quest",
         });
     });
 });
@@ -17,6 +19,8 @@ router.get("/", (req, res) => {
 router.get("/new", (req, res) => {
     res.render("quests/new.ejs", {
         tabTitle: "New Quest",
+        typeURL: "quests",
+        type: "New Quest",
     });
 });
 
@@ -30,23 +34,25 @@ router.delete("/:id", (req, res) => {
 //update
 router.put("/:id", (req, res) => {
     Quest.findByIdAndUpdate(req.params.id, req.body, () => {
-        res.redirect("/quests");
+        res.redirect("/quests/" + req.params.id);
     });
 });
 
 //create
 router.post("/", (req, res) => {
-    Map.create(req.body, (err, createdQuest) => {
+    Quest.create(req.body, (err, createdQuest) => {
         res.redirect("/quests");
     });
 });
 
 //edit
 router.get("/:id/edit", (req, res) => {
-    Map.findById(req.params.id, (err, foundQuest) => {
+    Quest.findById(req.params.id, (err, foundQuest) => {
         res.render("quests/edit.ejs", {
             quest: foundQuest,
             tabTitle: `Edit ${foundQuest.name}`,
+            typeURL: "quests",
+            type: "New Quest",
         });
     });
 });
@@ -57,6 +63,8 @@ router.get("/:id", (req, res) => {
         res.render("quests/show.ejs", {
             quest: foundQuest,
             tabTitle: `${foundQuest.name}`,
+            typeURL: "quests",
+            type: "New Quest",
         });
     });
 });

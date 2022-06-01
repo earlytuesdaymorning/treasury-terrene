@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head.ejs") %>
+</head>
+
+<body>
+    <%- include("../partials/styles.ejs") %>
+
+        <div class="full-page">
+            <header>
+                <%- include("../partials/header.ejs") %>
+            </header>
+            <div class="shell">
+                <section>
+                    <h3><%= monster.name %></h3>
+                    <p>
+                        <img src=<%=monster.img %>>
+                    </p>
+                    <table class="table table-bordered">
+                        <tr>
+                            <td>STR: <%= monster.str %></td>
+                            <td>DEX: <%= monster.dex %></td>
+                            <td>CON: <%= monster.con %></td>
+                            <td>INT: <%= monster.int %></td>
+                            <td>WIS: <%= monster.wis %></td>
+                            <td>CHA: <%= monster.cha %></td>
+                        </tr>
+                    </table>
+                </section>
+                <section>
+                    <ul>
+                        <li><%= monster.skills %></li>
+                        <li><%= monster.dmgrst %></li>
+                        <li><%= monster.dmgvul %></li>
+                    </ul>
+                    <p>
+                        <%= monster.description %>
+                    </p>
+                    <p>
+                        <%= monster.actions %>
+                    </p>
+                </section>
+                <section>
+                    <form action="/monsters/<%= monster._id %>?_method=DELETE" method="POST">
+                        <input type="submit" value="Delete Monster" />
+                        <button><a href="/monsters/<%= monster._id %>/edit">Edit Monster</a></button>
+                    </form>
+                </section>
+            </div>
+        </div>
+
+</body>
+
+</html>

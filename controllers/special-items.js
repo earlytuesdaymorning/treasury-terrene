@@ -9,6 +9,8 @@ router.get("/", (req, res) => {
         res.render("special-items/index.ejs", {
             specialitems: foundSpecialItems,
             tabTitle: "Special Items",
+            typeURL: "special-items",
+            type: "New Item",
         });
     });
 });
@@ -17,6 +19,8 @@ router.get("/", (req, res) => {
 router.get("/new", (req, res) => {
     res.render("special-items/new.ejs", {
         tabTitle: "New Item",
+        typeURL: "special-items",
+        type: "New Item",
     });
 });
 
@@ -30,7 +34,7 @@ router.delete("/:id", (req, res) => {
 //update
 router.put("/:id", (req, res) => {
     SpecialItem.findByIdAndUpdate(req.params.id, req.body, () => {
-        res.redirect("/special-items");
+        res.redirect("/special-items/" + req.params.id);
     });
 });
 
@@ -47,6 +51,8 @@ router.get("/:id/edit", (req, res) => {
         res.render("special-items/edit.ejs", {
             specialItem: foundSpecialItem,
             tabTitle: `Edit ${foundSpecialItem.name}`,
+            typeURL: "special-items",
+            type: "New Item",
         });
     });
 });
@@ -57,6 +63,8 @@ router.get("/:id", (req, res) => {
         res.render("special-items/show.ejs", {
             specialItem: foundSpecialItem,
             tabTitle: `${foundSpecialItem.name}`,
+            typeURL: "special-items",
+            type: "New Item",
         });
     });
 });

@@ -16,6 +16,8 @@ router.get("/", (req, res) => {
         res.render("monsters/index.ejs", {
             monsters: foundMonsters,
             tabTitle: "Monsters",
+            typeURL: "monsters",
+            type: "New Monster",
         });
     });
 });
@@ -24,6 +26,8 @@ router.get("/", (req, res) => {
 router.get("/new", (req, res) => {
     res.render("monsters/new.ejs", {
         tabTitle: "New Monster",
+        typeURL: "monsters",
+        type: "New Monster",
     });
 });
 
@@ -37,13 +41,13 @@ router.delete("/:id", (req, res) => {
 //update
 router.put("/:id", (req, res) => {
     Monster.findByIdAndUpdate(req.params.id, req.body, () => {
-        res.redirect("/monsters");
+        res.redirect("/monsters/" + req.params.id);
     });
 });
 
 //create
 router.post("/", (req, res) => {
-    Monster.create(req.body, (err, createdMap) => {
+    Monster.create(req.body, (err, createdMonster) => {
         res.redirect("/monsters");
     });
 });
@@ -51,9 +55,11 @@ router.post("/", (req, res) => {
 //edit
 router.get("/:id/edit", (req, res) => {
     Monster.findById(req.params.id, (err, foundMonster) => {
-        res.render("maps/edit.ejs", {
+        res.render("monsters/edit.ejs", {
             monster: foundMonster,
             tabTitle: `Edit ${foundMonster.name}`,
+            typeURL: "monsters",
+            type: "New Monster",
         });
     });
 });
@@ -64,6 +70,8 @@ router.get("/:id", (req, res) => {
         res.render("monsters/show.ejs", {
             monster: foundMonster,
             tabTitle: `${foundMonster.name}`,
+            typeURL: "monsters",
+            type: "New Monster",
         });
     });
 });

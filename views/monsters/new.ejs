@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head.ejs") %>
+</head>
+
+<body>
+    <%- include("../partials/styles.ejs") %>
+
+        <div class="full-page">
+            <header>
+                <%- include("../partials/header.ejs") %>
+            </header>
+            <div class="shell">
+                <div class="new-form">
+                    <form action="/monsters" method="POST">
+                        <label>Image URL: </label><input type="text" name="img" /><br />
+                        <label>Monster Name: </label><input type="text" name="name" /><br />
+                        <label>Description: </label><textarea name="description" cols="30" rows="10"></textarea><br />
+                        <label>Type: </label><input type="text" name="type" /><br />
+                        <label>Alignment: </label><input type="text" name="almt" /><br />
+                        <label>Armor Class: </label><input type="text" name="armcls" /><br />
+                        <label>Hit Points: </label><input type="text" name="hitpts" /><br />
+                        <label>Speed: </label><input type="number" name="speed" /><br />
+                        <label>Skills: </label><input type="text" name="skills" /><br />
+                        <label>Damage Resistences: </label><input type="text" name="dmgrst" /><br />
+                        <label>Damage Vulnerabilities: </label><input type="text" name="dmgvul" /><br />
+                        <label>Actions and Abilities: </label><textarea name="actions" cols="30" rows="10"></textarea><br />
+                        <label>Stats: </label><input type="text" placeholder="STR" name="str" />
+                        <input type="text" placeholder="DEX" name="dex" />
+                        <input type="text" placeholder="CON" name="con" />
+                        <input type="text" placeholder="INT" name="int" />
+                        <input type="text" placeholder="WIS" name="wis" />
+                        <input type="text" placeholder="CHA" name="cha" /><br />
+                        <input type="submit" value="Add Monster" />
+                    </form>
+                </div>
+            </div>
+        </div>
+
+</body>
+
+</html>
