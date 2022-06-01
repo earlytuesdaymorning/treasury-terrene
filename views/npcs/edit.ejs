@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head.ejs") %>
+</head>
+
+<body>
+    <%- include("../partials/styles.ejs") %>
+
+        <div class="full-page">
+            <header>
+                <%- include("../partials/header.ejs") %>
+            </header>
+            <div class="shell">
+                <div class="new-form">
+                    <form action="/npcs/<%= npc._id %>?_method=PUT" method="POST">
+                        <label>Image URL: </label><input type="text" name="img" value="<%= npc.img %>" /><br />
+                        <label>Name: </label><input type="text" name="name" value="<%= npc.name %>" /><br />
+                        <label>Description: </label><textarea name="description" cols="30"
+                            rows="10"><%= npc.description %></textarea><br />
+                        <label>Race: </label><input type="text" name="type" value="<%= npc.race %>" /><br />
+                        <label>Alignment: </label><input type="text" name="almt" value="<%= npc.almt %>" /><br />
+                        <label>Armor Class: </label><input type="text" name="armcls"
+                            value="<%= npc.armcls %>" /><br />
+                        <label>Hit Points: </label><input type="text" name="hitpts"
+                            value="<%= npc.hitpts %>" /><br />
+                        <label>Speed: </label><input type="number" name="speed" value="<%= npc.speed %>" /><br />
+                        <label>Skills: </label><input type="text" name="skills" value="<%= npc.skills %>" /><br />
+                        <label>Damage Resistences: </label><input type="text" name="dmgrst"
+                            value="<%= npc.dmgrst %>" /><br />
+                        <label>Damage Vulnerabilities: </label><input type="text" name="dmgvul"
+                            value="<%= npc.dmgvul %>" /><br />
+                        <label>Actions and Abilities: </label><textarea name="actions" cols="30"
+                            rows="10"><%= npc.actions %></textarea><br />
+                        <label>Stats: </label><input type="text" placeholder="STR" name="str"
+                            value="<%= npc.str %>" />
+                        <input type="text" placeholder="DEX" name="dex" value="<%= npc.dex %>" />
+                        <input type="text" placeholder="CON" name="con" value="<%= npc.con %>" />
+                        <input type="text" placeholder="INT" name="int" value="<%= npc.int %>" />
+                        <input type="text" placeholder="WIS" name="wis" value="<%= npc.wis %>" />
+                        <input type="text" placeholder="CHA" name="cha" value="<%= npc.cha %>" /><br />
+                        <input type="submit" value="Update npc" />
+                    </form>
+                </div>
+            </div>
+        </div>
+
+</body>
+
+</html>

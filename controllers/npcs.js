@@ -25,6 +25,17 @@ router.get("/new", (req, res) => {
 });
 
 //delete
+router.get("/delete", (req, res) => {
+    NPC.find({}, (err, foundNPCs) => {
+        res.render("npcs/delete.ejs", {
+            npcs: foundNPCs,
+            tabTitle: "NPCs",
+            typeURL: "npcs",
+            type: "New NPC",
+        });
+    });
+});
+
 router.delete("/:id", (req, res) => {
     NPC.findByIdAndRemove(req.params.id, () => {
         res.redirect("/npcs");

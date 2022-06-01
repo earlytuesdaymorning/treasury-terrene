@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head.ejs") %>
+</head>
+
+<body>
+    <%- include("../partials/styles.ejs") %>
+
+        <div class="full-page">
+            <header>
+                <%- include("../partials/header.ejs") %>
+            </header>
+            <div class="shell">
+                <section>
+                    <h3>
+                        <%= npc.name %>
+                    </h3>
+                    <p>
+                        <img src=<%=npc.img %>>
+                    </p>
+                    <table class="table table-bordered">
+                        <tr>
+                            <td>STR: <%= npc.str %>
+                            </td>
+                            <td>DEX: <%= npc.dex %>
+                            </td>
+                            <td>CON: <%= npc.con %>
+                            </td>
+                            <td>INT: <%= npc.int %>
+                            </td>
+                            <td>WIS: <%= npc.wis %>
+                            </td>
+                            <td>CHA: <%= npc.cha %>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+                <section>
+                    <ul>
+                        <li>
+                            <%= npc.gender %> <%= npc.race %>
+                        </li>
+                        <li>
+                            <%= npc.age %>
+                        </li>
+                        <li>
+                            <%= npc.almt %>
+                        </li>
+                    </ul>
+                    <p>
+                        <%= npc.lang %>
+                    </p>
+                    <p>
+                        <%= npc.personality %>
+                    </p>
+                </section>
+                <section>
+                    <form action="/npcs/<%= npc._id %>?_method=DELETE" method="POST">
+                        <input type="submit" value="Delete npc" />
+                        <button><a href="/npcs/<%= npc._id %>/edit">Edit npc</a></button>
+                    </form>
+                </section>
+            </div>
+        </div>
+
+</body>
+
+</html>
