@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head.ejs") %>
+</head>
+
+<body>
+    <%- include("../partials/styles.ejs") %>
+
+        <div class="full-page">
+            <header>
+                <%- include("../partials/header.ejs") %>
+            </header>
+            <div class="shell">
+                <div class="new-form">
+                    <form action="/quests/<%= quest._id %>?_method=PUT" method="POST">
+                        <label>Name: </label><input type="text" name="name" value="<%= quest.name %>" /><br />
+                        <label>Location: </label><input type="text" name="location" value="<%= quest.location %>" /><br />
+                        <label>Description: </label><textarea name="description" cols="30" rows="10"><%= quest.description %></textarea><br />
+                        <input type="submit" value="Update Quest" />
+                    </form>
+                </div>
+            </div>
+        </div>
+
+</body>
+
+</html>

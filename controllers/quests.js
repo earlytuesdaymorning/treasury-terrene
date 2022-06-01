@@ -25,6 +25,17 @@ router.get("/new", (req, res) => {
 });
 
 //delete
+router.get("/delete", (req, res) => {
+    Quest.find({}, (err, foundQuests) => {
+        res.render("quests/delete.ejs", {
+            quests: foundQuests,
+            tabTitle: "Quests",
+            typeURL: "quests",
+            type: "New Quest",
+        });
+    });
+});
+
 router.delete("/:id", (req, res) => {
     Quest.findByIdAndRemove(req.params.id, () => {
         res.redirect("/quests");

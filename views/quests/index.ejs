@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head.ejs") %>
+</head>
+
+<body>
+    <%- include("../partials/styles.ejs") %>
+
+        <div class="full-page">
+            <header>
+                <%- include("../partials/header.ejs") %>
+            </header>
+            <div class="shell">
+                <div class="all-things">
+                    <% quests.forEach(quest=> { %>
+                        <li><a href="/quests/<%=quest._id; %>">
+                                <%= quest.name; %>
+                            </a></li>
+                        <% }) %>
+                </div>
+            </div>
+        </div>
+
+</body>
+
+</html>
