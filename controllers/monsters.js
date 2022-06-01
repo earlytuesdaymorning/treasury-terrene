@@ -4,6 +4,13 @@ const Monster = require("../models/monster");
 
 //routes
 //index
+// router.get("/", (req, res) => {
+//     res.render("monsters/index.ejs", {
+//         allMonsters: Monster,
+//         tabTitle: "Monsters",
+//     });
+// });
+
 router.get("/", (req, res) => {
     Monster.find({}, (err, foundMonsters) => {
         res.render("monsters/index.ejs", {
