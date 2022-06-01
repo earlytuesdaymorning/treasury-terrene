@@ -14,15 +14,13 @@
         <section>
             <p><img src=<%= map.img %>></p>
             <p><%= map.description %></p>
-        </section>
-        <section>
-            <form action="/maps/<%= map._id %>?_method=DELETE" method="POST">
-                <input type="submit" value="Delete Map" />
-                <button><a href="/maps/<%= map._id %>/edit">Edit Map</a></button>
-            </form>
+            <button><a href="/maps/<%= map._id %>/edit">Edit Map</a></button>
         </section>
     </div>
 </div>
 
 </body>
 </html>
+<!-- <form action="/maps/<%= map._id %>?_method=DELETE" method="POST">
+    <input type="submit" value="Delete Map" />
+</form> -->

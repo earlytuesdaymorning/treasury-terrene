@@ -26,8 +26,19 @@ router.get("/new", (req, res) => {
 });
 
 //delete
+router.get("/delete", (req, res) => {
+    Map.find({}, (err, foundMaps) => {
+        res.render("maps/delete.ejs", {
+            maps: foundMaps,
+            tabTitle: "Maps",
+            typeURL: "maps",
+            type: "New Map",
+        });
+    });
+});
+
 router.delete("/:id", (req, res) => {
-    Map.findByIdAndRemove(req.params.id, () => {
+    Map.findByIdAndDelete(req.params.id, () => {
         res.redirect("/maps");
     });
 });
@@ -35,7 +46,7 @@ router.delete("/:id", (req, res) => {
 //update
 router.put("/:id", (req, res) => {
     Map.findByIdAndUpdate(req.params.id, req.body, () => {
-        res.redirect("/maps/" + req.params.id);
+        res.redirect("/maps/");
     });
 });
 
