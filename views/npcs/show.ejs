@@ -43,24 +43,21 @@
                             <%= npc.gender %> <%= npc.race %>
                         </li>
                         <li>
-                            <%= npc.age %>
+                            <%= npc.almt %>
                         </li>
                         <li>
-                            <%= npc.almt %>
+                            Age: <%= npc.age %>
                         </li>
                     </ul>
                     <p>
-                        <%= npc.lang %>
+                        Languages: <%= npc.lang %>
                     </p>
                     <p>
                         <%= npc.personality %>
                     </p>
                 </section>
                 <section>
-                    <form action="/npcs/<%= npc._id %>?_method=DELETE" method="POST">
-                        <input type="submit" value="Delete npc" />
-                        <button><a href="/npcs/<%= npc._id %>/edit">Edit npc</a></button>
-                    </form>
+                        <button><a href="/npcs/<%= npc._id %>/edit">Edit NPC</a></button>
                 </section>
             </div>
         </div>

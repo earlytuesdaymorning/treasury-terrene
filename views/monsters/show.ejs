@@ -28,25 +28,31 @@
                             <td>CHA: <%= monster.cha %></td>
                         </tr>
                     </table>
+                    <ul>
+                        <li><%= monster.almt %> <%= monster.type %></li>
+                        <li>Armor Class: <%= monster.armcls %></li>
+                        <li>Hit Points: <%= monster.hitpts %></li>
+                        <li>Speed: <%= monster.speed %></li>
+                    </ul>
                 </section>
                 <section>
                     <ul>
-                        <li><%= monster.skills %></li>
-                        <li><%= monster.dmgrst %></li>
-                        <li><%= monster.dmgvul %></li>
+                        <li>Skills: <%= monster.skills %></li>
+                        <li>Resistences: <%= monster.dmgrst %></li>
+                        <li>Vulnerabilities: <%= monster.dmgvul %></li>
                     </ul>
+                    <p>
+                        Languages: <%= monster.lang %>
+                    </p>
                     <p>
                         <%= monster.description %>
                     </p>
                     <p>
-                        <%= monster.actions %>
+                        Actions: <%= monster.actions %>
                     </p>
                 </section>
                 <section>
-                    <form action="/monsters/<%= monster._id %>?_method=DELETE" method="POST">
-                        <input type="submit" value="Delete Monster" />
                         <button><a href="/monsters/<%= monster._id %>/edit">Edit Monster</a></button>
-                    </form>
                 </section>
             </div>
         </div>
