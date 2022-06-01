@@ -32,6 +32,17 @@ router.get("/new", (req, res) => {
 });
 
 //delete
+router.get("/delete", (req, res) => {
+    Monster.find({}, (err, foundMonsters) => {
+        res.render("monsters/delete.ejs", {
+            monsters: foundMonsters,
+            tabTitle: "Monsters",
+            typeURL: "monsters",
+            type: "New Monster",
+        });
+    });
+});
+
 router.delete("/:id", (req, res) => {
     Monster.findByIdAndRemove(req.params.id, () => {
         res.redirect("/monsters");

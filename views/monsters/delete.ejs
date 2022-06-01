@@ -14,10 +14,10 @@
             </header>
             <div class="shell">
                 <div class="all-things">
-                    <% maps.forEach(map=> { %>
+                    <% monsters.forEach(monster=> { %>
                         <li>
-                            <%= map.location; %>
-                            <form action="/maps/<%= map._id %>?_method=DELETE" method="POST">
+                            <%= monster.name; %>
+                            <form action="/monsters/<%= monster._id %>?_method=DELETE" method="POST">
                                 <input type="submit" value="Delete" />
                             </form>
                         </li>
