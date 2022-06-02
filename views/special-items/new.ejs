@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head.ejs") %>
+</head>
+
+<body>
+    <%- include("../partials/styles.ejs") %>
+
+        <div class="full-page">
+            <header>
+                <%- include("../partials/header.ejs") %>
+            </header>
+            <div class="shell">
+                <div class="new-form">
+                    <form action="/special-items" method="POST">
+                        <label>Name: </label><input type="text" name="name" /><br />
+                        <label>Type: </label><input type="text" name="type" /><br />
+                        <label>Rarity: </label><input type="text" name="rarity" /> Attunement?: <input type="checkbox" name="atnmt" /><br />
+                        <label>Description: </label><textarea name="description" cols="30" rows="10"></textarea><br />
+                        <input type="submit" value="Add Item" />
+                    </form>
+                </div>
+            </div>
+        </div>
+
+</body>
+
+</html>

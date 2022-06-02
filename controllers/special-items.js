@@ -1,13 +1,13 @@
 const express = require("express");
 const router = express.Router();
-const SpecialItem = require("../models/special-item");
+const Item = require("../models/special-item");
 
 //routes
 //index
 router.get("/", (req, res) => {
-    SpecialItem.find({}, (err, foundSpecialItems) => {
+    Item.find({}, (err, foundItems) => {
         res.render("special-items/index.ejs", {
-            specialitems: foundSpecialItems,
+            items: foundItems,
             tabTitle: "Special Items",
             typeURL: "special-items",
             type: "New Item",
@@ -25,32 +25,55 @@ router.get("/new", (req, res) => {
 });
 
 //delete
+router.get("/delete", (req, res) => {
+    Item.find({}, (err, foundItems) => {
+        res.render("special-items/delete.ejs", {
+            items: foundItems,
+            tabTitle: "Delete Special Items",
+            typeURL: "special-items",
+            type: "New Item",
+        });
+    });
+});
+
 router.delete("/:id", (req, res) => {
-    SpecialItem.findByIdAndRemove(req.params.id, () => {
+    Item.findByIdAndRemove(req.params.id, () => {
         res.redirect("/special-items");
     });
 });
 
 //update
 router.put("/:id", (req, res) => {
-    SpecialItem.findByIdAndUpdate(req.params.id, req.body, () => {
+    if (req.body.atnmt === "on") {
+        req.body.atnmt = true
+    } else {
+        req.body.atnmt = false
+    }
+
+    Item.findByIdAndUpdate(req.params.id, req.body, () => {
         res.redirect("/special-items/" + req.params.id);
     });
 });
 
 //create
 router.post("/", (req, res) => {
-    SpecialItem.create(req.body, (err, createdSpecialItem) => {
+    if (req.body.atnmt === "on") {
+        req.body.atnmt = true
+    } else {
+        req.body.atnmt = false
+    }
+
+    Item.create(req.body, (err, createdItem) => {
         res.redirect("/special-items");
     });
 });
 
 //edit
 router.get("/:id/edit", (req, res) => {
-    SpecialItem.findById(req.params.id, (err, foundSpecialItem) => {
+    Item.findById(req.params.id, (err, foundItem) => {
         res.render("special-items/edit.ejs", {
-            specialItem: foundSpecialItem,
-            tabTitle: `Edit ${foundSpecialItem.name}`,
+            item: foundItem,
+            tabTitle: `Edit ${foundItem.name}`,
             typeURL: "special-items",
             type: "New Item",
         });
@@ -59,10 +82,10 @@ router.get("/:id/edit", (req, res) => {
 
 //show
 router.get("/:id", (req, res) => {
-    SpecialItem.findById(req.params.id, (err, foundSpecialItem) => {
+    Item.findById(req.params.id, (err, foundItem) => {
         res.render("special-items/show.ejs", {
-            specialItem: foundSpecialItem,
-            tabTitle: `${foundSpecialItem.name}`,
+            item: foundItem,
+            tabTitle: `${foundItem.name}`,
             typeURL: "special-items",
             type: "New Item",
         });

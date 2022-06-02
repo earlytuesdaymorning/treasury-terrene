@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head.ejs") %>
+</head>
+
+<body>
+    <%- include("../partials/styles.ejs") %>
+
+        <div class="full-page">
+            <header>
+                <%- include("../partials/header.ejs") %>
+            </header>
+            <div class="shell">
+                <section>
+                    <h3>
+                        <%=item.name %>
+                    </h3>
+                    <p>
+                         Type: <%= item.type %><% if(item.atnmt===true){ %>, Requires Attunement <% } %>
+                    </p>
+                    <p>
+                        <%= item.description %>
+                    </p>
+                    <button><a href="/special-items/<%= item._id %>/edit">Edit Item</a></button>
+                </section>
+            </div>
+        </div>
+
+</body>
+
+</html>
