@@ -15,7 +15,7 @@
             <div class="shell">
                 <div class="all-things">
                     <% npcs.forEach(npc=> { %>
-                        <li>
+                        <li class="indexes">
                             <%= npc.name; %>
                                 <form action="/npcs/<%= npc._id %>?_method=DELETE" method="POST">
                                     <input type="submit" value="Delete" />

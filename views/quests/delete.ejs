@@ -15,7 +15,7 @@
             <div class="shell">
                 <div class="all-things">
                     <% quests.forEach(quest=> { %>
-                        <li>
+                        <li class="indexes">
                             <%= quest.name; %>
                                 <form action="/quests/<%= quest._id %>?_method=DELETE" method="POST">
                                     <input type="submit" value="Delete" />
