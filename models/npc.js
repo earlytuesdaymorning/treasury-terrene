@@ -15,6 +15,7 @@ const npcSchema = new Schema({
     cha: String,
     lang: String,
     personality: String,
+    hook: String,
     img: String,
 });
 
