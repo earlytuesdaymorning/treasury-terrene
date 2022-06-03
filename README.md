@@ -13,7 +13,7 @@ You can add, edit, and delete things in categories such as maps, monsters, NPCs,
 
 From there, you can choose one of the names in the list to get more information about it...
 
-<img src="https://images2.imgbox.com/dd/13/GgGgofVS_o.png" width="600" />
+<img src="https://images2.imgbox.com/f7/e5/VK0O3jKt_o.png" width="600" />
 
 ...and either edit it, or go back to the category's index page.
 
