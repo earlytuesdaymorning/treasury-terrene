@@ -11,6 +11,7 @@ router.get("/", (req, res) => {
             tabTitle: "Special Items",
             typeURL: "special-items",
             type: "New Item",
+            typeDelete: "Delete Item",
         });
     });
 });
@@ -21,6 +22,7 @@ router.get("/new", (req, res) => {
         tabTitle: "New Item",
         typeURL: "special-items",
         type: "New Item",
+        typeDelete: "Delete Item",
     });
 });
 
@@ -32,6 +34,7 @@ router.get("/delete", (req, res) => {
             tabTitle: "Delete Special Items",
             typeURL: "special-items",
             type: "New Item",
+            typeDelete: "Delete Item",
         });
     });
 });
@@ -76,6 +79,7 @@ router.get("/:id/edit", (req, res) => {
             tabTitle: `Edit ${foundItem.name}`,
             typeURL: "special-items",
             type: "New Item",
+            typeDelete: "Delete Item",
         });
     });
 });
@@ -88,6 +92,7 @@ router.get("/:id", (req, res) => {
             tabTitle: `${foundItem.name}`,
             typeURL: "special-items",
             type: "New Item",
+            typeDelete: "Delete Item",
         });
     });
 });

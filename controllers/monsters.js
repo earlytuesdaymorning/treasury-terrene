@@ -18,6 +18,7 @@ router.get("/", (req, res) => {
             tabTitle: "Monsters",
             typeURL: "monsters",
             type: "New Monster",
+            typeDelete: "Delete Monster",
         });
     });
 });
@@ -28,6 +29,7 @@ router.get("/new", (req, res) => {
         tabTitle: "New Monster",
         typeURL: "monsters",
         type: "New Monster",
+        typeDelete: "Delete Monster",
     });
 });
 
@@ -39,6 +41,7 @@ router.get("/delete", (req, res) => {
             tabTitle: "Delete Monsters",
             typeURL: "monsters",
             type: "New Monster",
+            typeDelete: "Delete Monster",
         });
     });
 });
@@ -71,6 +74,7 @@ router.get("/:id/edit", (req, res) => {
             tabTitle: `Edit ${foundMonster.name}`,
             typeURL: "monsters",
             type: "New Monster",
+            typeDelete: "Delete Monster",
         });
     });
 });
@@ -83,6 +87,7 @@ router.get("/:id", (req, res) => {
             tabTitle: `${foundMonster.name}`,
             typeURL: "monsters",
             type: "New Monster",
+            typeDelete: "Delete Monster",
         });
     });
 });

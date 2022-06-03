@@ -11,6 +11,7 @@ router.get("/", (req, res) => {
             tabTitle: "NPCs",
             typeURL: "npcs",
             type: "New NPC",
+            typeDelete: "Delete NPC",
         });
     });
 });
@@ -21,6 +22,7 @@ router.get("/new", (req, res) => {
         tabTitle: "New NPCs",
         typeURL: "npcs",
         type: "New NPC",
+        typeDelete: "Delete NPC",
     });
 });
 
@@ -32,6 +34,7 @@ router.get("/delete", (req, res) => {
             tabTitle: "Delete NPCs",
             typeURL: "npcs",
             type: "New NPC",
+            typeDelete: "Delete NPC",
         });
     });
 });
@@ -64,6 +67,7 @@ router.get("/:id/edit", (req, res) => {
             tabTitle: `Edit ${foundNPC.name}`,
             typeURL: "npcs",
             type: "New NPC",
+            typeDelete: "Delete NPC",
         });
     });
 });
@@ -76,6 +80,7 @@ router.get("/:id", (req, res) => {
             tabTitle: `${foundNPC.name}`,
             typeURL: "npcs",
             type: "New NPC",
+            typeDelete: "Delete NPC",
         });
     });
 });

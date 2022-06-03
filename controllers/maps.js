@@ -12,6 +12,7 @@ router.get("/", (req, res) => {
             tabTitle: "Maps",
             typeURL: "maps",
             type: "New Map",
+            typeDelete: "Delete Map",
         });
     });
 });
@@ -22,6 +23,7 @@ router.get("/new", (req, res) => {
         tabTitle: "New Map",
         typeURL: "maps",
         type: "New Map",
+        typeDelete: "Delete Map",
     });
 });
 
@@ -33,6 +35,7 @@ router.get("/delete", (req, res) => {
             tabTitle: "Delete Maps",
             typeURL: "maps",
             type: "New Map",
+            typeDelete: "Delete Map",
         });
     });
 });
@@ -65,6 +68,7 @@ router.get("/:id/edit", (req, res) => {
             tabTitle: `Edit Map of ${foundMap.location}`,
             typeURL: "maps",
             type: "New Map",
+            typeDelete: "Delete Map",
         });
     });
 });
@@ -77,6 +81,7 @@ router.get("/:id", (req, res) => {
             tabTitle: `Map of ${foundMap.location}`,
             typeURL: "maps",
             type: "New Map",
+            typeDelete: "Delete Map",
         });
     });
 });

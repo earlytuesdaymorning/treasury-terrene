@@ -11,6 +11,7 @@ router.get("/", (req, res) => {
             tabTitle: "Quests",
             typeURL: "quests",
             type: "New Quest",
+            typeDelete: "Delete Quest",
         });
     });
 });
@@ -21,6 +22,7 @@ router.get("/new", (req, res) => {
         tabTitle: "New Quest",
         typeURL: "quests",
         type: "New Quest",
+        typeDelete: "Delete Quest",
     });
 });
 
@@ -32,6 +34,7 @@ router.get("/delete", (req, res) => {
             tabTitle: "Delete Quests",
             typeURL: "quests",
             type: "New Quest",
+            typeDelete: "Delete Quest",
         });
     });
 });
@@ -64,6 +67,7 @@ router.get("/:id/edit", (req, res) => {
             tabTitle: `Edit ${foundQuest.name}`,
             typeURL: "quests",
             type: "New Quest",
+            typeDelete: "Delete Quest",
         });
     });
 });
@@ -76,6 +80,7 @@ router.get("/:id", (req, res) => {
             tabTitle: `${foundQuest.name}`,
             typeURL: "quests",
             type: "New Quest",
+            typeDelete: "Delete Quest",
         });
     });
 });
