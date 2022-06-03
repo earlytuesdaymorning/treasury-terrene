@@ -23,7 +23,10 @@
                     <p>
                         <%= item.description %>
                     </p>
-                    <button><a href="/special-items/<%= item._id %>/edit">Edit Item</a></button>
+                    <div class="btn-group">
+                        <button class="btn"><a href="/special-items/<%= item._id %>/edit">Edit Item</a></button>
+                        <button class="btn"><a href="/special-items">Back</a></button>
+                    </div>
                 </section>
             </div>
         </div>

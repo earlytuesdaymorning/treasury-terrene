@@ -15,15 +15,15 @@
             <div class="shell">
                 <div class="new-form">
                     <form action="/npcs/<%= npc._id %>?_method=PUT" method="POST">
-                        <label>Image URL: </label><input type="text" name="img" value="<%= npc.img %>" /><br />
-                        <label>Name: </label><input type="text" name="name" value="<%= npc.name %>" /><br />
-                        <label>Age: </label><input type="number" name="age" value="<%= npc.age %>" /><br />
-                        <label>Alignment: </label><input type="text" name="almt" value="<%= npc.almt %>" /><br />
-                        <label>Gender: </label><input type="text" name="gender" value="<%= npc.gender %>" /><br />
-                        <label>Race: </label><input type="text" name="race" value="<%= npc.race %>" /><br />                        
-                        <label>Languages: </label><input type="text" name="lang" value="<%= npc.hitpts %>" /><br />
-                        <label>Personality: </label><textarea name="personality" cols="30" rows="10"><%= npc.personality %></textarea><br />
-                        <label>Hook: </label><input type="text" name="hook" value="<%= npc.hook %>" /><br />
+                        <label>Image URL: </label><input type="text" name="img" value="<%= npc.img %>" />
+                        <label>Name: </label><input type="text" name="name" value="<%= npc.name %>" />
+                        <label>Age: </label><input type="number" name="age" value="<%= npc.age %>" />
+                        <label>Alignment: </label><input type="text" name="almt" value="<%= npc.almt %>" />
+                        <label>Gender: </label><input type="text" name="gender" value="<%= npc.gender %>" />
+                        <label>Race: </label><input type="text" name="race" value="<%= npc.race %>" />                        
+                        <label>Languages: </label><input type="text" name="lang" value="<%= npc.hitpts %>" />
+                        <label>Personality: </label><textarea name="personality" cols="30" rows="10"><%= npc.personality %></textarea>
+                        <label>Hook: </label><input type="text" name="hook" value="<%= npc.hook %>" />
                         <label>Stats: </label><input type="text" placeholder="STR" name="str" value="<%= npc.str %>" />
                         <input type="text" placeholder="DEX" name="dex" value="<%= npc.dex %>" />
                         <input type="text" placeholder="CON" name="con" value="<%= npc.con %>" />

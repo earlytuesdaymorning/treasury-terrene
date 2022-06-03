@@ -21,7 +21,10 @@
                     <p>
                         <%= quest.description %>
                     </p>
-                    <button><a href="/quests/<%= quest._id %>/edit">Edit Quest</a></button>
+                    <div class="btn-group">
+                        <button class="btn"><a href="/quests/<%= quest._id %>/edit">Edit Quest</a></button>
+                        <button class="btn"><a href="/quests">Back</a></button>
+                    </div>
                 </section>
             </div>
         </div>

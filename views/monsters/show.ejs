@@ -13,21 +13,19 @@
                 <%- include("../partials/header.ejs") %>
             </header>
             <div class="shell">
+                <section><img class="showimg" src=<%=monster.img %>></section>
+                <table class="table table-bordered">
+                    <tr>
+                        <td>STR: <%= monster.str %></td>
+                        <td>DEX: <%= monster.dex %></td>
+                        <td>CON: <%= monster.con %></td>
+                        <td>INT: <%= monster.int %></td>
+                        <td>WIS: <%= monster.wis %></td>
+                        <td>CHA: <%= monster.cha %></td>
+                    </tr>
+                </table>
                 <section>
-                    <h3><%= monster.name %></h3>
-                    <p>
-                        <img src=<%=monster.img %>>
-                    </p>
-                    <table class="table table-bordered">
-                        <tr>
-                            <td>STR: <%= monster.str %></td>
-                            <td>DEX: <%= monster.dex %></td>
-                            <td>CON: <%= monster.con %></td>
-                            <td>INT: <%= monster.int %></td>
-                            <td>WIS: <%= monster.wis %></td>
-                            <td>CHA: <%= monster.cha %></td>
-                        </tr>
-                    </table>
+                <h3><%= monster.name %></h3>
                     <ul>
                         <li><%= monster.almt %> <%= monster.type %></li>
                         <li>Armor Class: <%= monster.armcls %></li>
@@ -52,7 +50,10 @@
                     </p>
                 </section>
                 <section>
-                        <button><a href="/monsters/<%= monster._id %>/edit">Edit Monster</a></button>
+                    <div class="btn-group">
+                        <button class="btn"><a href="/monsters/<%= monster._id %>/edit">Edit Monster</a></button>
+                        <button class="btn"><a href="/monsters">Back</a></button>
+                    </div>
                 </section>
             </div>
         </div>

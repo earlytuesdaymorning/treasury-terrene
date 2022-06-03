@@ -15,9 +15,9 @@
             <div class="shell">
                 <div class="new-form">
                     <form action="/special-items/<%= item._id %>?_method=PUT" method="POST">
-                        <label>Name: </label><input type="text" name="name" value="<%= item.name %>" /><br />
-                        <label>Type: </label><input type="text" name="location" value="<%= item.type %>" /><br />
-                        <label>Rarity: </label><input type="text" name="rarity" value="<%= item.rarity %>" /> Attunement?: <input type="checkbox" name="atnmt" <% if(item.atnmt===true){ %> checked <% } %> /> <br />
+                        <label>Name: </label><input type="text" name="name" value="<%= item.name %>" />
+                        <label>Type: </label><input type="text" name="location" value="<%= item.type %>" />
+                        <label>Rarity: </label><input type="text" name="rarity" value="<%= item.rarity %>" /> Attunement?: <input type="checkbox" name="atnmt" <% if(item.atnmt===true){ %> checked <% } %> />
                         <label>Description: </label><textarea name="description" cols="30" rows="10"><%= item.description %></textarea><br />
                         <input type="submit" value="Update Item" />
                     </form>

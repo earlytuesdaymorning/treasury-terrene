@@ -15,8 +15,8 @@
             <div class="shell">
                 <div class="new-form">
                     <form action="/quests/<%= quest._id %>?_method=PUT" method="POST">
-                        <label>Name: </label><input type="text" name="name" value="<%= quest.name %>" /><br />
-                        <label>Location: </label><input type="text" name="location" value="<%= quest.location %>" /><br />
+                        <label>Name: </label><input type="text" name="name" value="<%= quest.name %>" />
+                        <label>Location: </label><input type="text" name="location" value="<%= quest.location %>" />
                         <label>Description: </label><textarea name="description" cols="30" rows="10"><%= quest.description %></textarea><br />
                         <input type="submit" value="Update Quest" />
                     </form>

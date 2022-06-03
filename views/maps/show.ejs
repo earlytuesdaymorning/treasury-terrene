@@ -12,9 +12,12 @@
     </header>
     <div class="shell">
         <section>
-            <p><img src=<%= map.img %>></p>
+            <img src=<%= map.img %>
             <p><%= map.description %></p>
-            <button><a href="/maps/<%= map._id %>/edit">Edit Map</a></button>
+            <div class="btn-group">
+                <button class="btn"><a href="/maps/<%= map._id %>/edit">Edit Map</a></button>
+                <button class="btn"><a href="/maps/">Back</a></button>
+            </div>
         </section>
     </div>
 </div>

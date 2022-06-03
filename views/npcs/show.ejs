@@ -14,40 +14,24 @@
             </header>
             <div class="shell">
                 <section>
-                    <h3>
-                        <%= npc.name %>
-                    </h3>
-                    <p>
-                        <img src=<%=npc.img %>>
-                    </p>
+                    <img class="showimg" src=<%=npc.img %>>
+                </section>
                     <table class="table table-bordered">
                         <tr>
-                            <td>STR: <%= npc.str %>
-                            </td>
-                            <td>DEX: <%= npc.dex %>
-                            </td>
-                            <td>CON: <%= npc.con %>
-                            </td>
-                            <td>INT: <%= npc.int %>
-                            </td>
-                            <td>WIS: <%= npc.wis %>
-                            </td>
-                            <td>CHA: <%= npc.cha %>
-                            </td>
+                            <td>STR: <%= npc.str %></td>
+                            <td>DEX: <%= npc.dex %></td>
+                            <td>CON: <%= npc.con %></td>
+                            <td>INT: <%= npc.int %></td>
+                            <td>WIS: <%= npc.wis %></td>
+                            <td>CHA: <%= npc.cha %></td>
                         </tr>
                     </table>
-                </section>
                 <section>
+                    <h3><%= npc.name %></h3>
                     <ul>
-                        <li>
-                            <%= npc.gender %> <%= npc.race %>
-                        </li>
-                        <li>
-                            <%= npc.almt %>
-                        </li>
-                        <li>
-                            Age: <%= npc.age %>
-                        </li>
+                        <li><%= npc.gender %> <%= npc.race %></li>
+                        <li><%= npc.almt %></li>
+                        <li>Age: <%= npc.age %></li>
                     </ul>
                     <p>
                         Languages: <%= npc.lang %>
@@ -60,7 +44,10 @@
                     </p>
                 </section>
                 <section>
-                        <button><a href="/npcs/<%= npc._id %>/edit">Edit NPC</a></button>
+                    <div class="btn-group">
+                        <button class="btn"><a href="/npcs/<%= npc._id %>/edit">Edit NPC</a></button>
+                        <button class="btn"><a href="/npcs">Back</a></button>
+                    </div>
                 </section>
             </div>
         </div>
