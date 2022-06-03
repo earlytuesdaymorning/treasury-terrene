@@ -28,7 +28,7 @@ If you are routed within a category, you can see on the header the option to eit
 
 This is a node.js app built with express modules such as mongoose, ejs, and method-override.
 It was written with JavaScript and HTML5.
-It also uses a CSS stylesheet along with Bootstrap, Normalize, and Skeleton.
+It also uses a CSS stylesheet along with Bootstrap, Normalize, and Skeleton. Font is "Kaushan Script" from Google Fonts.
 Data is hosted on mongoDB.
 
 ## Getting Started
