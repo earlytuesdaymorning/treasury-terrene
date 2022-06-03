@@ -30,7 +30,7 @@ router.get("/delete", (req, res) => {
     Map.find({}, (err, foundMaps) => {
         res.render("maps/delete.ejs", {
             maps: foundMaps,
-            tabTitle: "Maps",
+            tabTitle: "Delete Maps",
             typeURL: "maps",
             type: "New Map",
         });

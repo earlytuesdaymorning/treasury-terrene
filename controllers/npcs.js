@@ -29,7 +29,7 @@ router.get("/delete", (req, res) => {
     NPC.find({}, (err, foundNPCs) => {
         res.render("npcs/delete.ejs", {
             npcs: foundNPCs,
-            tabTitle: "NPCs",
+            tabTitle: "Delete NPCs",
             typeURL: "npcs",
             type: "New NPC",
         });

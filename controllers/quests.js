@@ -29,7 +29,7 @@ router.get("/delete", (req, res) => {
     Quest.find({}, (err, foundQuests) => {
         res.render("quests/delete.ejs", {
             quests: foundQuests,
-            tabTitle: "Quests",
+            tabTitle: "Delete Quests",
             typeURL: "quests",
             type: "New Quest",
         });

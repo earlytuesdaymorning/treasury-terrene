@@ -36,7 +36,7 @@ router.get("/delete", (req, res) => {
     Monster.find({}, (err, foundMonsters) => {
         res.render("monsters/delete.ejs", {
             monsters: foundMonsters,
-            tabTitle: "Monsters",
+            tabTitle: "Delete Monsters",
             typeURL: "monsters",
             type: "New Monster",
         });
