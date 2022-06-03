@@ -23,3 +23,18 @@ If you are routed within a category, you can see on the header the option to eit
 
 <img src="https://images2.imgbox.com/9a/ba/ZK7P8T3B_o.png" width="600" />
 <img src="https://images2.imgbox.com/dd/13/GgGgofVS_o.png" width="600" />
+
+## Technologies Used
+
+This is a node.js app built with express modules such as mongoose, ejs, and method-override.
+It also uses a CSS stylesheet along with Bootstrap, Normalize, and Skeleton.
+Data is hosted on mongoDB.
+
+## Getting Started
+
+Live link to deployed site:
+[Treasury Terrene](https://treasury-terrene.herokuapp.com/)
+
+## Future Enhancements
+
+In the near future there will be user authentication added, and each user will have access to their own private database.
