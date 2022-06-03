@@ -5,11 +5,11 @@ If you are a fan of pen-and-paper roleplaying games like Dungeons and Dragons, y
 
 I made this application for everyone to more easily keep track of game details. Everything is indexed into categories and easily accessible within an easy-to-navigate header.
 
-<img src="https://images2.imgbox.com/86/a0/QNVcZIqy_o.png" width="600" />
+<img src="https://images2.imgbox.com/a7/16/hRFV9VfC_o.png" width="600" />
 
 You can add, edit, and delete things in categories such as maps, monsters, NPCs, quests, and special items. Clicking on any of these in the navigation bar will take you to that category's index page.
 
-<img src="https://images2.imgbox.com/26/9e/EecMcjzc_o.png" width="600" />
+<img src="https://images2.imgbox.com/86/a0/QNVcZIqy_o.png" width="600" />
 
 From there, you can choose one of the names in the list to get more information about it...
 
