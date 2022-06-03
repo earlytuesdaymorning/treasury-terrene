@@ -17,7 +17,7 @@ From there, you can choose one of the names in the list to get more information 
 
 ...and either edit it, or go back to the category's index page.
 
-<img src="https://images2.imgbox.com/b1/5a/90CDCWq1_o.png" width="600" />
+<img src="https://images2.imgbox.com/f2/49/8AkKwe5v_o.png" width="600" />
 
 If you are routed within a category, you can see on the header the option to either add something new or navigate to the delete list.
 
